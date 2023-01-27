@@ -42,7 +42,7 @@ class CFGDenoiserWithGrad(CompVisDenoiser):
         if decode_method is None:
             decode_fn = lambda x: x
         elif decode_method == "autoencoder":
-            decode_fn = model.inner_model.differentiable_decode_first_stage
+            decode_fn = model.inner_model.decode_first_stage
         elif decode_method == "linear":
             decode_fn = model.inner_model.linear_decode
         self.decode_fn = decode_fn
